@@ -1,0 +1,4 @@
+rootProject.name = 'kotlinutils'
+include ':common'
+include ':platform-jvm'
+include ':platform-js'
