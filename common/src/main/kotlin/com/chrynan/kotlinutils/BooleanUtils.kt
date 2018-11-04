@@ -65,12 +65,6 @@ fun <R> (() -> R).thenBoolean(value: Boolean) = invoke().asBoolean(value)
 
 fun <R> (() -> R).thenFalse() = invoke().asFalse()
 
-fun (() -> Unit).thenTrue() = invoke().asTrue()
-
-fun (() -> Unit).thenFalse() = invoke().asFalse()
-
-fun (() -> Unit).thenBoolean(value: Boolean) = invoke().asBoolean(value)
-
 inline fun <T, R> T.runThenTrue(block: T.() -> R) = run(block).asTrue()
 
 inline fun <T, R> T.runThenFalse(block: T.() -> R) = run(block).asFalse()
