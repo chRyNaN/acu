@@ -90,3 +90,5 @@ inline fun <R> Boolean?.runIfFalse(block: () -> R) = if (this == false) block() 
 inline fun <R> Boolean?.runIfNull(block: () -> R) = if (this == null) block() else null
 
 inline fun <R> Boolean?.runIfFalsy(block: () -> R) = if (isFalsy()) block() else null
+
+fun not(value: Boolean) = !value
