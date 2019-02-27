@@ -22,6 +22,12 @@ fun Boolean?.orFalse() = this ?: false
 
 fun Boolean?.or(value: Boolean) = this ?: value
 
+fun Boolean?.nullAsTrue() = this.orTrue()
+
+fun Boolean?.nullAsFalse() = this.orFalse()
+
+infix fun Boolean?.nullAs(value: Boolean) = this.or(value)
+
 fun Int?.isIntTrueValue(value: Int = INT_TRUE) = this == value
 
 fun Int?.isIntFalseValue(value: Int = INT_FALSE) = this == value
