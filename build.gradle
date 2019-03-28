@@ -67,8 +67,8 @@ android {
 kotlin {
     targets {
         // iOS
-        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos")             \
-                                          ? presets.iosArm64 : presets.iosX64
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos")                \
+                                             ? presets.iosArm64 : presets.iosX64
 
         fromPreset(iOSTarget, 'ios') {
             binaries {
@@ -78,6 +78,21 @@ kotlin {
 
         // Android
         fromPreset(presets.android, 'android')
+
+        // Java
+        jvm()
+
+        // Javascript
+        js()
+
+        // Mac
+        macosX64("mac")
+
+        // Windows
+        mingwX64("windows")
+
+        // Web Assembly
+        wasm32("webAssembly")
     }
     sourceSets {
         commonMain {
@@ -105,6 +120,36 @@ kotlin {
         iosMain {
         }
         iosTest {
+        }
+        jvmMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+            }
+        }
+        jvmTest {
+        }
+        iosMain {
+        }
+        iosTest {
+        }
+        jsMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+            }
+        }
+        jsTest {
+        }
+        macMain {
+        }
+        macTest {
+        }
+        windowsMain {
+        }
+        windowsTest {
+        }
+        webAssemblyMain {
+        }
+        webAssemblyTest {
         }
     }
 }
